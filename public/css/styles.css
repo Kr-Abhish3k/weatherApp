@@ -1,0 +1,40 @@
+body {
+	color: #333333;
+	font-family: Arial, Helvetica, sans-serif;
+	max-width: 650px;
+	margin: 0 auto;
+	padding: 0 10px;
+	/* text-align: center; */
+}
+
+footer {
+	margin-top: 15px;
+	padding-top: 10px;
+	border-top: 1px solid #eeeeee;
+	color: #888888;
+}
+
+h1 {
+	text-decoration: underline;
+}
+
+a {
+	margin-left: 10px;
+}
+
+.card {
+	margin-bottom: 25px;
+}
+.card-header {
+	position: relative;
+}
+
+.card-header-select {
+	position: absolute;
+	top: 18px;
+	left: 5px;
+}
+
+.card-header-title {
+	margin-left: 10px;
+}
