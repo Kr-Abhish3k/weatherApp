@@ -12,6 +12,7 @@ const viewPath = path.join(__dirname, "../templates/views/");
 const partialsPath = path.join(__dirname, "../templates/partials");
 
 let locationList = "";
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "../public"))); //set up static directory to serve
 app.set("view engine", "hbs"); // to get handlebars engine set for views
@@ -156,6 +157,6 @@ app.get("*", (request, response) => {
 	});
 });
 
-app.listen(3000, () => {
-	console.log("server started on port 3000");
+app.listen(PORT, () => {
+	console.log(`server started on port : ${PORT}`);
 });
