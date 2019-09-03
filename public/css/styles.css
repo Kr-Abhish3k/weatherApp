@@ -5,6 +5,10 @@ body {
 	margin: 0 auto;
 	padding: 0 10px;
 	/* text-align: center; */
+	background-repeat: no-repeat;
+	background-image: url("/icons/rain.svg");
+	background-position: bottom 75px right 75px;
+	background-size: 150px;
 }
 
 footer {
@@ -37,4 +41,8 @@ a {
 
 .card-header-title {
 	margin-left: 10px;
+}
+
+.hidden {
+	display: none;
 }

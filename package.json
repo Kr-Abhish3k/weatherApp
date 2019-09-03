@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "webServer.js",
 	"scripts": {
-		"start": "node source/app.js"
+		"start": "nodemon source/app.js"
 	},
 	"keywords": [],
 	"author": "",

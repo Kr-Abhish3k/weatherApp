@@ -20,10 +20,13 @@ const getWeather = ({ latitude, longitude, placeName } = {}, callback) => {
 		} else {
 			const currentForecast = body.currently;
 
-			callback(
-				undefined,
-				`${body.daily.summary}.The current weather outside in ${placeName}, in Timezone ${body.timezone} is ${currentForecast.summary}, Temperature being ${currentForecast.temperature} degree Celcius , with windSpeed of ${currentForecast.windSpeed} and humidity of  ${currentForecast.humidity}. There is ${currentForecast.precipProbability} percent Chance of Rain.`
-			);
+			callback(undefined, [
+				`${body.daily.summary}.The current weather outside in ${placeName}, in Timezone ${body.timezone} is ${currentForecast.summary}, Temperature being ${currentForecast.temperature} degree Celcius , with windSpeed of ${currentForecast.windSpeed} and humidity of  ${currentForecast.humidity}. There is ${currentForecast.precipProbability} percent Chance of Rain. \n 
+                Highest Temperatute :- ${body.daily.data[0].temperatureHigh} \n
+                Lowest Temperature:- ${body.daily.data[0].temperatureLow} \n
+                Feels Like:- ${body.currently.temperature}`,
+				body.currently.icon
+			]);
 		}
 	});
 };

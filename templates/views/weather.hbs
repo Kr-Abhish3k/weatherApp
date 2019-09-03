@@ -6,21 +6,23 @@
     <link rel="stylesheet" rel="stylesheet" href="/css/styles.css" />
     <link rel="icon" href="/images/weather.png" />
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
 </head>
 
 <body>
     {{>header}}
     {{>content}}
+    <span id="iconType" class="hidden">{{icontype}}</span>
     <p style="text-decoration: underline;font-weight:bold">{{location}}</p>
     {{#if locationList}}
     <form method="get" action="/forecast">
         {{#list locationList}}{{/list}}
     </form>
     {{/if}}
-    <p>{{forecast}}</p>
+    <p>{{#breaklines forecast}}{{/breaklines}}</p>
     <p>{{error}}</p>
     {{>footer}}
 </body>
-
+<script type="text/javascript" src="/js/app.js"></script>
 
 </html>

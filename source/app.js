@@ -5,7 +5,7 @@ const hbs = require("hbs");
 const fs = require("fs");
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
-
+const hbsHelpers = require("./helpers/handlebars");
 var app = express();
 
 const viewPath = path.join(__dirname, "../templates/views/");
@@ -19,35 +19,11 @@ app.set("view engine", "hbs"); // to get handlebars engine set for views
 app.set("views", viewPath); // to set folder handlerbar should look into to find views
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//to register helper functions
+hbsHelpers(hbs);
+
 //to register partial files ro handle Bar
 hbs.registerPartials(partialsPath);
-hbs.registerHelper("list", function(items, options) {
-	var out = `<p class="notification is-info">Multiple locations with similar name found.</br>Select any one location</p>
-                <div class='control'>`;
-
-	for (var i = 0, l = items.length; i < l; i++) {
-		let value =
-			items[i].center[0] +
-			";" +
-			items[i].center[1] +
-			";" +
-			items[i].place_name;
-		out =
-			out +
-			`<div class="card">
-                <header class="card-header has-background-grey-light">
-                    <input class='card-header-select' id =${items[i].id} type='radio' name='location' value="${value}">
-                    <label for=${items[i].id} class="card-header-title">${items[i].text}</label>
-                </header>
-                <div class="card-content has-background-white-ter">
-                 <div class="content">
-                     <p>${items[i].place_name}</p>
-                 </div>
-                </div>
-            </div>`;
-	}
-	return out + `</div><input class="button" type='submit' value='submit'>`;
-});
 /*
 let partialFileNames = fs.readdirSync(partialsPath);
 partialFileNames.forEach(filename => {
@@ -72,7 +48,6 @@ app.get("", (request, response) => {
 });
 
 app.get("/weather", (request, response) => {
-	console.log(request.query.location);
 	if (!request.query.location) {
 		return response.render("weather", {
 			title: "Weather Info",
@@ -97,6 +72,7 @@ app.get("/weather", (request, response) => {
 				name: "Kumar Abhishek"
 			});
 		} else if (body.features.length === 1) {
+			// WHEN ONLY ON MATCH FOR LOCATION IS FOUND
 			locationList = "";
 			let locationData = {
 				latitude: body.features[0].center[1],
@@ -111,22 +87,27 @@ app.get("/weather", (request, response) => {
 						name: "Kumar Abhishek"
 					});
 				}
+
 				response.render("weather", {
 					title: "Weather Info",
 					location: request.query.location,
-					forecast: forecastData,
-					name: "Kumar Abhishek"
+					forecast: forecastData[0],
+					name: "Kumar Abhishek",
+					icontype: forecastData[1]
 				});
 			});
 		}
 	});
 });
 app.get("/forecast", (request, response) => {
+	//WHEN USER SELECTS ONE OF THE LOCATIONS FROM LIST
 	if (!request.query.location) {
 		return response.render("weather", {
 			title: "Weather Info",
 			error: "Select any Location!!",
-			locationList: locationList
+			locationList: locationList,
+			name: "Kumar Abhishek",
+			icontype: forecastData[1]
 		});
 	}
 	let position = request.query.location.split(";");
@@ -139,21 +120,24 @@ app.get("/forecast", (request, response) => {
 		if (error) {
 			return response.render("weather", {
 				title: "Weather Info",
-				error: error
+				error: error,
+				name: "Kumar Abhishek"
 			});
 		}
 		response.render("weather", {
 			title: "Weather Info",
 			location: locationData.placeName,
 			forecast: forecastData,
-			name: "Kumar Abhishek"
+			name: "Kumar Abhishek",
+			icontype: forecastData[1]
 		});
 	});
 });
 
 app.get("*", (request, response) => {
 	response.render("404Page", {
-		title: "Page Not Found"
+		title: "Page Not Found",
+		name: "Kumar Abhishek"
 	});
 });
 
