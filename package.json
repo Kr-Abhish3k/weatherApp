@@ -4,16 +4,19 @@
 	"description": "",
 	"main": "webServer.js",
 	"scripts": {
-		"start": "nodemon source/app.js"
+		"start": "node source/app.js",
+		"dev": "nodemon source/app.js -e js,hbs"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Kumar Abhishek",
 	"license": "ISC",
 	"dependencies": {
 		"express": "^4.17.1",
 		"hbs": "^4.0.4",
-		"nodemon": "^1.19.1",
 		"npm": "^6.11.2",
 		"request": "^2.88.0"
+	},
+	"devDependencies": {
+		"nodemon": "^1.19.2"
 	}
 }
