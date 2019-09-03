@@ -6,7 +6,7 @@ body {
 	padding: 0 10px;
 	/* text-align: center; */
 	background-repeat: no-repeat;
-	background-image: url("/icons/rain.svg");
+
 	background-position: bottom 75px right 75px;
 	background-size: 150px;
 }
