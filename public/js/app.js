@@ -122,5 +122,6 @@ function pinLocation(position) {
 }
 
 if (addLabel) {
-	map.on("load", pinLocation(position));
+	//map.on("load", pinLocation(position));
+	//map.after("styledataloading", pinLocation(position));
 }
