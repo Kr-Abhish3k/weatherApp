@@ -25,8 +25,8 @@
 
 
     <div class="searchForm_wrapper">{{>content}}</div>
-    <div class="clearfix">
-        <div class="content">
+    <div class="content_wrapper clearfix">
+        <div class="content forecast">
             <span id="iconType" class="hidden">{{icontype}}</span>
             <span id="position" class="hidden">{{position.longitude}},{{position.latitude}}</span>
             <!--<p style="text-decoration: underline;font-weight:bold">{{location}}</p>
@@ -35,17 +35,18 @@
                 {{#list locationList}}{{/list}}
             </form>
             {{/if}} -->
-            <p class="forecastDetail">{{#breaklines forecast}}{{/breaklines}}</p>
+            <div class="forecast_image"></div>
+            <p class="forecast_detail">{{#breaklines forecast}}{{/breaklines}}</p>
             <p>{{error}}</p>
 
         </div>
-        {{!-- <div class="map">
+        <div class="map">
             <div id='map'></div>
-        </div> --}}
+        </div>
     </div>
     {{>footer}}
 </body>
-{{!-- <script type="text/javascript" src="/js/app.js"></script> --}}
+<script type="text/javascript" src="/js/app.js"></script>
 <script>
 
 </script>

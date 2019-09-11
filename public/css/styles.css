@@ -47,6 +47,32 @@ a {
   height: 0;
 }
 
+.weatherPage .content_wrapper {
+  margin: 15px;
+}
+.weatherPage .content_wrapper .content {
+  margin-top: 50px;
+  width: 25%;
+  float: left;
+  border: 1px solid black;
+  padding: 10px 15px;
+}
+.weatherPage .content_wrapper .content .forecast_image {
+  margin: 0 auto;
+  width: 150px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 150px;
+}
+.weatherPage .content_wrapper .map {
+  margin-left: 30px;
+  border: 1px solid black;
+  width: 70%;
+  float: left;
+  position: relative;
+}
+
 .locationListPage .notification {
   width: 450px;
   margin: 0 auto;

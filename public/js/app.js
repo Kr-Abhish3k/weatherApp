@@ -4,7 +4,7 @@ let position = [],
 
 if (document.querySelector("body").classList.contains("weatherPage")) {
 	let iconType = document.querySelector("#iconType").textContent;
-	document.querySelector(".forecastDetail").style.backgroundImage =
+	document.querySelector(".forecast_image").style.backgroundImage =
 		'url("/icons/' + iconType + '.svg")';
 }
 
