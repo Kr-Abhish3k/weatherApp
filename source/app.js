@@ -42,7 +42,7 @@ partialFileNames.forEach(filename => {
 app.get("", (request, response) => {
 	response.render("index", {
 		title: "weather App",
-		forecast: "forecast for the day.",
+		forecast: "",
 		name: "Kumar Abhishek"
 	});
 });
@@ -66,13 +66,13 @@ app.get("/weather", (request, response) => {
 
 		if (body.features.length > 1) {
 			locationList = body.features;
-			response.render("weather", {
+			response.render("locationList", {
 				title: "Weather Info",
 				locationList: body.features,
 				name: "Kumar Abhishek"
 			});
 		} else if (body.features.length === 1) {
-			// WHEN ONLY ON MATCH FOR LOCATION IS FOUND
+			// WHEN ONLY ONE MATCH FOR LOCATION IS FOUND
 			locationList = "";
 			let locationData = {
 				latitude: body.features[0].center[1],
@@ -129,7 +129,8 @@ app.get("/forecast", (request, response) => {
 			location: locationData.placeName,
 			forecast: forecastData,
 			name: "Kumar Abhishek",
-			icontype: forecastData[1]
+			icontype: forecastData[1],
+			position: locationData
 		});
 	});
 });

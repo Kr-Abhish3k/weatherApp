@@ -17,6 +17,7 @@
 		"request": "^2.88.0"
 	},
 	"devDependencies": {
-		"nodemon": "^1.19.2"
+		"nodemon": "^1.19.2",
+		"sass": "^1.23.0-module.beta.1"
 	}
 }

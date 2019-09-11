@@ -1,48 +1,84 @@
-body {
-	color: #333333;
-	font-family: Arial, Helvetica, sans-serif;
-	max-width: 650px;
-	margin: 0 auto;
-	padding: 0 10px;
-	/* text-align: center; */
-	background-repeat: no-repeat;
-
-	background-position: bottom 75px right 75px;
-	background-size: 150px;
+.homePage .map {
+  width: 95%;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
 }
-
-footer {
-	margin-top: 15px;
-	padding-top: 10px;
-	border-top: 1px solid #eeeeee;
-	color: #888888;
+body {
+  position: relative;
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 10px;
+}
+body header {
+  height: 50px;
+}
+body .searchForm_wrapper #SearchForm {
+  width: 650px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+body footer {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eeeeee;
+  color: #888888;
 }
 
 h1 {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 a {
-	margin-left: 10px;
-}
-
-.card {
-	margin-bottom: 25px;
-}
-.card-header {
-	position: relative;
-}
-
-.card-header-select {
-	position: absolute;
-	top: 18px;
-	left: 5px;
-}
-
-.card-header-title {
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.locationListPage .notification {
+  width: 450px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+.locationListPage .list_wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+.locationListPage .list_wrapper .location_list_submit {
+  width: 100px;
+}
+.locationListPage .control .card {
+  width: 200px;
+  margin: 15px 25px 25px 0;
+  float: left;
+}
+.locationListPage .control .card .card-header {
+  position: relative;
+}
+.card-header .card-header-select {
+  position: absolute;
+  top: 18px;
+  left: 5px;
+}
+.card-header .card-header-title {
+  margin-left: 10px;
+}
+
+.card-content .content {
+  margin: 15px;
+  height: 110px;
+}
+
+/*# sourceMappingURL=styles.css.map */
