@@ -7,7 +7,7 @@ function hbsHelpers(hbs) {
 
 	hbs.registerHelper("list", function(items, options) {
 		var out = `<p class="notification is-info">Multiple locations with similar name found.</br>Select any one location</p>
-                    <div class='control'>`;
+                    <div class='control location_list clearfix'>`;
 
 		for (var i = 0, l = items.length; i < l; i++) {
 			let value =
@@ -18,21 +18,21 @@ function hbsHelpers(hbs) {
 				items[i].place_name;
 			out =
 				out +
-				`<div class="card">
+				`<div class="card location_list_item">
                     <header class="card-header has-background-grey-light">
                         <input class='card-header-select' id =${items[i].id} type='radio' name='location' value="${value}">
                         <label for=${items[i].id} class="card-header-title">${items[i].text}</label>
                     </header>
                     <div class="card-content has-background-white-ter">
                      <div class="content">
-                         <p>${items[i].place_name}</p>
+                         <span>${items[i].place_name}</span>
                      </div>
                     </div>
                 </div>`;
 		}
 		return (
 			out +
-			`</div><input class="button" type='submit' value='submit'>`
+			`</div><input class="button location_list_submit" type='submit' value='submit'>`
 		);
 	});
 
