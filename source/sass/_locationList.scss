@@ -1,0 +1,49 @@
+.locationListPage {
+	.notification {
+		width: 450px;
+		margin: 0 auto;
+		margin-bottom: 25px;
+	}
+
+	.list_wrapper {
+		width: 85%;
+		margin: 0 auto;
+		.location_list_submit {
+			width: 100px;
+		}
+	}
+
+	.control {
+		.card {
+			width: 200px;
+
+			margin: 15px 25px 25px 0;
+			float: left;
+
+			.card-header {
+				position: relative;
+			}
+
+			.card-content {
+			}
+		}
+	}
+}
+
+.card-header {
+	.card-header-select {
+		position: absolute;
+		top: 18px;
+		left: 5px;
+	}
+	.card-header-title {
+		margin-left: 10px;
+	}
+}
+
+.card-content {
+	.content {
+		margin: 15px;
+		height: 110px;
+	}
+}

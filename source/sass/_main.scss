@@ -1,0 +1,47 @@
+body {
+	position: relative;
+	color: #333333;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0 10px;
+
+	header {
+		height: 50px;
+	}
+
+	.searchForm_wrapper {
+		#SearchForm {
+			width: 650px;
+			margin: 0 auto;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+
+	footer {
+		margin-top: 15px;
+		padding-top: 10px;
+		border-top: 1px solid #eeeeee;
+		color: #888888;
+	}
+}
+
+h1 {
+	text-decoration: underline;
+}
+
+a {
+	margin-left: 10px;
+}
+
+.hidden {
+	display: none;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
