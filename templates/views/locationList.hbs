@@ -8,12 +8,14 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
-<body>
+<body class="locationListPage">
     {{>header}}
-    {{>content}}
-    <p>{{location}}</p>
-    <p>{{forecast}}</p>
-    <p>{{error}}</p>
+    <div class="searchForm_wrapper">{{>content}}</div>
+    <div class="list_wrapper">
+        <form method="get" action="/forecast">
+            {{#list locationList}}{{/list}}
+        </form>
+    </div>
     {{>footer}}
 </body>
 
