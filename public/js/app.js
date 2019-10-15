@@ -2,12 +2,14 @@ let position = [],
 	zoomLevel,
 	addLabel = false;
 
+//get icon-type from hidden html element
 if (document.querySelector("body").classList.contains("weatherPage")) {
 	let iconType = document.querySelector("#iconType").textContent;
 	document.querySelector(".forecast_image").style.backgroundImage =
 		'url("/icons/' + iconType + '.svg")';
 }
 
+//get position from hidden html element
 if (document.querySelector("#position")) {
 	position = document.querySelector("#position").textContent.split(",");
 	zoomLevel = 9;
@@ -91,9 +93,8 @@ var pulsingDot = {
 	}
 };
 
-function pinLocation(position) {
+function pinlocation() {
 	map.addImage("pulsing-dot", pulsingDot, { pixelRatio: 2 });
-
 	map.addLayer({
 		id: "points",
 		type: "symbol",
@@ -121,7 +122,8 @@ function pinLocation(position) {
 	});
 }
 
-if (addLabel) {
-	//map.on("load", pinLocation(position));
-	//map.after("styledataloading", pinLocation(position));
-}
+map.on("load", function() {
+	if (addLabel && position.length > 0) {
+		pinlocation();
+	}
+});

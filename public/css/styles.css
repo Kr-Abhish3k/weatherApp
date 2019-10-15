@@ -94,6 +94,10 @@ a {
 .locationListPage .control .card .card-header {
   position: relative;
 }
+.locationListPage .control .card .card-content {
+  overflow: scroll;
+}
+
 .card-header .card-header-select {
   position: absolute;
   top: 18px;
@@ -101,6 +105,11 @@ a {
 }
 .card-header .card-header-title {
   margin-left: 10px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .card-content .content {

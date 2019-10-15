@@ -25,6 +25,7 @@
 			}
 
 			.card-content {
+				overflow: scroll;
 			}
 		}
 	}
@@ -38,6 +39,11 @@
 	}
 	.card-header-title {
 		margin-left: 10px;
+		display: inline-block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		align-items: center;
+		white-space: nowrap;
 	}
 }
 
